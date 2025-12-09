@@ -1,0 +1,19 @@
+[package]
+name = "{{ project-name }}"
+version = "0.1.0"
+edition = "2021"
+license = "{{ license }}"
+description = "{{ description }}"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+slint = "1.14.1"
+i18n-embed = { version = "0.16", features = [
+    "fluent-system",
+    "desktop-requester",
+] }
+i18n-embed-fl = "0.10"
+
+[build-dependencies]
+slint-build = "1.14.1"

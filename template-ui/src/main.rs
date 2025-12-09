@@ -3,9 +3,17 @@
 
 use std::error::Error;
 
+mod i18n;
+
 slint::include_modules!();
 
 fn main() -> Result<(), Box<dyn Error>> {
+    // Get the system's preferred languages.
+    let requested_languages = i18n_embed::DesktopLanguageRequester::requested_languages();
+
+    // Enable localizations to be applied.
+    i18n::init(&requested_languages);
+
     let ui = AppWindow::new()?;
 
     ui.on_request_increase_value({

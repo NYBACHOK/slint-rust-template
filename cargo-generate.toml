@@ -1,0 +1,22 @@
+[template]
+cargo_generate_version = ">=0.22"
+
+[placeholders.appid]
+type = "string"
+prompt = "App ID"
+regex = "^[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.[a-zA-Z0-9-_]+(\\.[a-zA-Z0-9-_]+)?$"
+default = "com.example.application"
+
+[placeholders.description]
+type = "string"
+prompt = "Description of application"
+default = "Slint application"
+
+[placeholders.license]
+type = "string"
+prompt = "SPDX license identifier (https://spdx.org/licenses/)"
+default = "MIT"
+
+[hooks]
+pre = ["generate/rename.rhai"]
+post = ["generate/cleanup.rhai"]
