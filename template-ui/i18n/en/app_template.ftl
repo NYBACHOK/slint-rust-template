@@ -1,1 +1,0 @@
-app-title = {{ project-name | title_case }}

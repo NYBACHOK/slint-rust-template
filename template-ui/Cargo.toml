@@ -1,20 +1,13 @@
 [package]
-name = "{{ project-name }}"
+name = "{{ project-name }}_ui"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 license = "{{ license }}"
 description = "{{ description }}"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
-slint = "1.14.1"
-i18n-embed = { version = "0.16", features = [
-    "fluent-system",
-    "desktop-requester",
-] }
-i18n-embed-fl = "0.10"
-rust-embed = "8.8"
+# Enable `gettext` feature if you need localization. Read about localizing slint apps here: https://docs.slint.dev/latest/docs/slint/guide/development/translations/
+slint = { version = "1.14", features = [] }
 
 [build-dependencies]
-slint-build = "1.14.1"
+slint-build = "1.14"

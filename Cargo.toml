@@ -1,6 +1,6 @@
 [workspace]
 members = [ 
-    "{{ project-name }}-ui"
+    "{{ project-name }}_ui"
 ]
 resolver = "2"
 
